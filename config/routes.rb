@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  resources :locations, only: [:new, :create, :show]
+
+  root to: 'locations#new'
 end
