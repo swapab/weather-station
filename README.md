@@ -1,50 +1,36 @@
-Weather Stat
+Weather Station
 ================
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+A weather station based on **[Open Weather Map JSON API](http://openweathermap.org/API)**
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+## My ToDo
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
+### * Must :star:
 
-Problems? Issues?
------------
+- [ ] Generate new API key on http://openweathermap.org/API
+- [ ] Home page: Accept city and country
+- [ ] Validate City/Country
+      * - [ ] city and country both required
+- [ ] Table to show data
+- [ ] Submiting form should show me weather
+- [ ] Temperature
+- [ ] Wind
+- [ ] Cloudiness
+- [ ] Pressure
+- [ ] Humidity
+- [ ] Sunrise
+- [ ] Sunset
+- [ ] Geo coords
+- [ ] Show recent search (persist this info in db?)
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+### Good :sparkles:
+- [ ] Show weather forecast(next hour, next 24hr)
+- [ ] Auto load cities per country
+- [ ] Auto-complete for city and country
+- [ ] Integrate weather widget
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.3.0
-- Rails 5.1.4
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+###  WoW :heart:
+- [ ] Graphical representation of weather
+- [ ] Search by city: using search engine(Sphinx, Solr)
+- [ ] Show weather forecast(weekly, monthly)
+- [ ] Change background/theme based on weather conditions(Raining :umbrella:, Cloudy :cloud:, Sunny :sunny:, Snow-fall :snowflake: like that)
