@@ -7,10 +7,9 @@ A weather station based on **[Open Weather Map JSON API](http://openweathermap.o
 
 ### * Must :star:
 
-- [ ] Generate new API key on http://openweathermap.org/API
-- [ ] Home page: Accept city and country
-- [ ] Validate City/Country
-      * - [ ] city and country both required
+- [x] Generate new API key on http://openweathermap.org/API
+- [x] Home page: Accept city and country
+- [ ] Validate City/Country: city and country both required
 - [ ] Table to show data
 - [ ] Submiting form should show me weather
 - [ ] Temperature
