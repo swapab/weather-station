@@ -7,7 +7,7 @@ development:
 
 test:
   <<: *defaults
-  database: weather-station-test
+  database: weather_station_test
 
 production:
   <<: *defaults
