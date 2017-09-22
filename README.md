@@ -1,8 +1,5 @@
-Weather Station
+Weather Station [![Build Status](https://travis-ci.org/swapab/weather-station.png)](https://travis-ci.org/swapab/weather-station) [![Code Climate](https://codeclimate.com/github/swapab/weather-station/badges/gpa.svg)](https://codeclimate.com/github/swapab/weather-station)
 ================
-
- [![Build Status](https://travis-ci.org/swapab/weather-station.png)](https://travis-ci.org/swapab/weather-station)
- +[![Code Climate](https://codeclimate.com/github/swapab/weather-station/badges/gpa.svg)](https://codeclimate.com/github/swapab/weather-station)
 
 A weather station based on **[Open Weather Map JSON API](http://openweathermap.org/API)**
 
