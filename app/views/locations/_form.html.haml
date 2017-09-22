@@ -1,7 +1,7 @@
 .container
   %h1 Show Weather for
   = simple_form_for @location, html: { class: 'form-horizontal' } do |f|
-    = f.input :country, required: true
-    = f.input :city, required: true
+    = f.input :country
+    = f.input :city
     .form-actions
-      = f.button :submit, 'Show Weather', :class=> "btn btn-primary"
+      = f.button :submit, 'Show Weather', class: "btn btn-primary"

@@ -5,13 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.3.0'
-
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'coffee-rails', '~> 4.2'
 gem 'country_select'
+gem 'draper'
 gem 'haml-rails'
-gem 'high_voltage'
 gem 'simple_form'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
