@@ -13,8 +13,19 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @location = Location.new(params_to_attributes)
+    @weather = Weather.new(@location)
   end
 
   def edit
+  end
+
+  private
+
+  def params_to_attributes
+    return {} unless params[:id]
+
+    city, country = params[:id].split('-')
+    {city: city, country: country}
   end
 end

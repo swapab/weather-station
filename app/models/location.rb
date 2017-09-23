@@ -10,8 +10,12 @@ class Location
 
   def initialize(attributes = {})
     attributes.each do |name, value|
-      send("#{name}=", value.try(:downcase))
+      send("#{name}=", value)
     end
+  end
+
+  def query
+    [city, country].join(', ')
   end
 
   def city?
@@ -23,6 +27,6 @@ class Location
   end
 
   def to_param
-    "#{city}-#{country}"
+    "#{city.try(:downcase)}-#{country.try(:downcase)}"
   end
 end

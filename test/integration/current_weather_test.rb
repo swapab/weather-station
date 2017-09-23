@@ -7,14 +7,50 @@ class CurrentWeatherTest < Capybara::Rails::TestCase
     assert page.has_content?('Show Weather for')
   end
 
+  let(:germany) { 'Germany' }
+  let(:berlin) { 'Berlin' }
+  let(:india) { 'India' }
+  let(:mumbai) { 'Mumbai' }
+
   test 'redirects to show' do
     visit root_path
 
-    select('India', from: 'Country')
-    fill_in('City', with: 'Mumbai')
+    select(india, from: 'Country')
+    fill_in('City', with: mumbai)
+
+    Weather.any_instance.stubs(:data).returns({})
 
     click_button('Show Weather')
 
     assert_equal location_path('mumbai-in'), page.current_path
+  end
+
+  test 'should set city/county on error' do
+    visit root_path
+
+    select(germany, from: 'Country')
+    click_button('Show Weather')
+
+    assert_equal locations_path, page.current_path
+
+    assert_equal 'DE', page.find('#location_country').value
+
+    fill_in('City', with: berlin)
+    select('', from: 'Country')
+    click_button('Show Weather')
+
+    assert_equal berlin, page.find('#location_city').value
+  end
+
+  test 'notify if city or country left blank' do
+    visit root_path
+
+    select(india, from: 'Country')
+
+    click_button('Show Weather')
+
+    assert_equal locations_path, page.current_path
+
+    assert page.has_content?("can't be blank")
   end
 end

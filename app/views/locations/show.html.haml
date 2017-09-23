@@ -1,2 +1,9 @@
 %h1 Weather#show
 %p Find me in app/views/weather/show.html.haml
+
+%table.table
+  %tbody
+    - @weather.data.each do |label, info|
+      %tr
+        %td= label.humanize
+        %td= info

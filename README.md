@@ -9,18 +9,20 @@ A weather station based on **[Open Weather Map JSON API](http://openweathermap.o
 
 - [x] Generate new API key on http://openweathermap.org/API
 - [x] Home page: Accept city and country
-- [ ] Validate City/Country: city and country both required
-- [ ] Table to show data
-- [ ] Submiting form should show me weather
-- [ ] Temperature
-- [ ] Wind
-- [ ] Cloudiness
-- [ ] Pressure
-- [ ] Humidity
-- [ ] Sunrise
-- [ ] Sunset
-- [ ] Geo coords
+- [x] Validate City/Country: city and country both required
+- [x] Table to show data
+- [x] Submiting form should show me weather
+- [x] Temperature
+- [x] Wind
+- [x] Cloudiness
+- [x] Pressure
+- [x] Humidity
+- [x] Sunrise
+- [x] Sunset
+- [x] Geo coords
+- [ ] Cache weather data with e-tag
 - [ ] Show recent search (persist this info in db?)
+- [ ] And yes deply to Heroku(or try OpenShift?)
 
 ### Good :sparkles:
 - [ ] Show weather forecast(next hour, next 24hr)

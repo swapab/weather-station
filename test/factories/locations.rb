@@ -9,7 +9,7 @@ FactoryGirl.define do
 
     trait :berlin do
       city 'Berlin'
-      country 'Deutschland'
+      country 'Germany'
     end
   end
 end
