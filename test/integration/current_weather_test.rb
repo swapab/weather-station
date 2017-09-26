@@ -69,4 +69,15 @@ class CurrentWeatherTest < Capybara::Rails::TestCase
     assert_equal 1, all('table.weather-table').count
     assert_equal sample_weather.count, all('table.weather-table tr').count
   end
+
+  test 'caching works like a charm' do
+    Rails.cache.clear
+    Weather.any_instance.stubs(:data).returns(sample_weather)
+
+    assert_nil Rails.cache.read('location/berlin-de')
+
+    visit location_path('berlin-de')
+
+    refute_nil Rails.cache.read('location/berlin-de')
+  end
 end

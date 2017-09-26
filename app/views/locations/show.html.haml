@@ -3,7 +3,7 @@
 
 %table.table.weather-table
   %tbody
-    - @weather.data.each do |label, info|
+    - @weather_data.each do |label, info|
       %tr
         %td= label.humanize
         %td= info

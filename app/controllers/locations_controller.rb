@@ -14,7 +14,10 @@ class LocationsController < ApplicationController
 
   def show
     location = Location.new(params_to_attributes)
-    @weather = Weather.new(location)
+    @weather_data =
+      Rails.cache.fetch("location/#{params[:id]}", expires_in: 10.minutes) do
+        Weather.new(location).data
+      end
   end
 
   def edit
@@ -26,6 +29,6 @@ class LocationsController < ApplicationController
     return {} unless params[:id]
 
     city, country = params[:id].split('-')
-    {city: city, country: country}
+    { city: city, country: country }
   end
 end
