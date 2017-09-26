@@ -14,7 +14,9 @@ module Service
     private
 
     def default_request
-      %w(temperature
+      %w(city
+         country
+         temperature
          min_temperature
          max_temperature
          wind

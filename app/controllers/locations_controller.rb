@@ -13,8 +13,8 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @location = Location.new(params_to_attributes)
-    @weather = Weather.new(@location)
+    location = Location.new(params_to_attributes)
+    @weather = Weather.new(location)
   end
 
   def edit

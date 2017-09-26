@@ -15,6 +15,10 @@ module Service
       it 'given city and country should return current weather' do
         refute_nil weather_service.current
       end
+
+      it 'gets expected response for request' do
+        assert_equal sample_weather.keys, weather_service.current.keys
+      end
     end
   end
 end

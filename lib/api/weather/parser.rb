@@ -1,10 +1,27 @@
 module Api
   module Weather
-    class Parser < Struct.new(:data, :request)
+    class Parser
+      attr_reader :data, :request
+
+      def initialize(data, request)
+        @data = data
+        @request = request
+      end
+
       def response
+        return {} if data.blank?
+
         request.each_with_object({}) do |value, response_hash|
           response_hash[value] = send(value).to_s
         end
+      end
+
+      def city
+        data['name']
+      end
+
+      def country
+        data['sys']['country']
       end
 
       def temperature
@@ -24,7 +41,7 @@ module Api
       end
 
       def cloudiness
-        "#{weather['main']}: #{weather['description']}"
+        weather['description'].titleize
       end
 
       def pressure
@@ -54,7 +71,7 @@ module Api
       end
 
       def weather
-        data['weather'][0]
+        data['weather'].first
       end
     end
   end
