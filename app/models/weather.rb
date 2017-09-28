@@ -1,3 +1,5 @@
+require 'service'
+
 class Weather
   attr_reader :location, :period
 
