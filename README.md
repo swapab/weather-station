@@ -35,4 +35,4 @@ A weather station based on **[Open Weather Map JSON API](http://openweathermap.o
 - [ ] Graphical representation of weather
 - [ ] Search by city: using search engine(Sphinx, Solr)
 - [ ] Show weather forecast(weekly, monthly)
-- [ ] Change background/theme based on weather conditions(Raining :umbrella:, Cloudy :cloud:, Sunny :sunny:, Snow-fall :snowflake: like that)
+- [ ] Change background/theme based on weather conditions(Raining :umbrella: Cloudy :cloud: Sunny :sunny: Snow-fall :snowflake: like that)
