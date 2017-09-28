@@ -1,6 +1,12 @@
 class LocationsController < ApplicationController
+  rescue_from (Api::Weather::Error::CityNonFound) { |error| city_not_found(error) }
+
   def create
-    @location = Location.new(country: params[:location][:country], city: params[:location][:city])
+    @location = Location.new(
+      country: params[:location][:country],
+      city: params[:location][:city]
+    )
+
     if @location.valid?
       redirect_to location_path(@location)
     else
@@ -24,6 +30,13 @@ class LocationsController < ApplicationController
   end
 
   private
+
+  def city_not_found(error)
+    attrs = params_to_attributes
+    @location = Location.new(attrs.merge(country: attrs[:country].upcase))
+    @location.errors.add(:city, error.message)
+    render :new
+  end
 
   def params_to_attributes
     return {} unless params[:id]

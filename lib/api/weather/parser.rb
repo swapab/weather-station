@@ -1,15 +1,17 @@
 module Api
   module Weather
     class Parser
-      attr_reader :data, :request
+      attr_reader :data, :request, :query
 
-      def initialize(data, request)
+      def initialize(data, request, query)
         @data = data
         @request = request
+        @query = query
       end
 
       def response
         return {} if data.blank?
+        validate_data
 
         request.each_with_object({}) do |value, response_hash|
           response_hash[value] = send(value).to_s
@@ -72,6 +74,10 @@ module Api
 
       def weather
         data['weather'].first
+      end
+
+      def validate_data
+        raise(Error::CityNonFound, query) if data['cod'] == '404'
       end
     end
   end

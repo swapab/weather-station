@@ -80,4 +80,17 @@ class CurrentWeatherTest < Capybara::Rails::TestCase
 
     refute_nil Rails.cache.read('location/berlin-de')
   end
+
+  test 'city not found should render new page with error message' do
+    Rails.cache.clear
+
+    Weather.any_instance.expects(:data).raises(
+      Api::Weather::Error::CityNonFound, 'Custom error message'
+    )
+
+    visit location_path('unknown-zz')
+
+    assert_equal location_path('unknown-zz'), page.current_path
+    assert page.has_content?('Custom error message')
+  end
 end
