@@ -8,4 +8,8 @@ describe Weather do
 
     refute_nil weather.data
   end
+
+  it 'initializes Service::Weather' do
+    refute_nil weather.send(:weather_service)
+  end
 end

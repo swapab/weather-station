@@ -10,6 +10,22 @@ module Api
       assert_nil current_weather.request
     end
 
+    it 'uses OpenWeather::Current api' do
+      assert_equal OpenWeather::Current, current_weather.api
+    end
+
+    describe 'base api is abstract' do
+      let(:base) { Weather::Base.new }
+
+      it 'raises error for .get method' do
+        assert_raises(NotImplementedError) { base.get }
+      end
+
+      it 'raises error for .api method' do
+        assert_raises(NotImplementedError) { base.api }
+      end
+    end
+
     describe '.get' do
       before do
         mock_api = mock(city: sample_data)
