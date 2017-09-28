@@ -9,7 +9,6 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'coffee-rails', '~> 4.2'
 gem 'country_select'
 gem 'haml-rails'
-gem 'simple_form'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'open-weather'
@@ -17,6 +16,7 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'therubyracer', platform: :ruby
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -36,8 +36,9 @@ end
 
 group :test do
   gem 'factory_girl_rails'
+  gem 'launchy'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'mocha'
-  gem 'launchy'
+  gem 'simplecov', require: false
 end
