@@ -20,7 +20,8 @@ A weather station based on **[Open Weather Map JSON API](http://openweathermap.o
 - [x] Sunrise
 - [x] Sunset
 - [x] Geo coords
-- [ ] Cache weather data with e-tag
+- [x] Cache weather data with Rails.cache
+- [x] Handle OpenWeatherMap error response: 404 - city-not-found
 - [ ] Show recent search (persist this info in db?)
 - [ ] And yes deply to Heroku(or try OpenShift?)
 
