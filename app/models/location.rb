@@ -14,6 +14,10 @@ class Location
     end
   end
 
+  def humanize
+    "#{city.titleize}, #{country.upcase}"
+  end
+
   def query
     [city, country].join(', ')
   end

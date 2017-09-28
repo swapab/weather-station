@@ -19,10 +19,10 @@ class LocationsController < ApplicationController
   end
 
   def show
-    location = Location.new(params_to_attributes)
+    @location = Location.new(params_to_attributes)
     @weather_data =
       Rails.cache.fetch("location/#{params[:id]}", expires_in: 10.minutes) do
-        Weather.new(location).data
+        Weather.new(@location).data
       end
   end
 
