@@ -46,26 +46,22 @@ class CurrentWeatherTest < Capybara::Rails::TestCase
     visit root_path
 
     select(india, from: 'Country')
-
     click_button('Show Weather')
 
     assert_equal locations_path, page.current_path
-
     assert page.has_content?("can't be blank")
   end
 
   test 'render table with weather info' do
+    Weather.any_instance.stubs(:data).returns(sample_weather)
+
     visit root_path
 
     select(germany, from: 'Country')
     fill_in('City', with: berlin)
-
     click_button('Show Weather')
 
     assert_equal location_path('berlin-de'), page.current_path
-
-    Weather.any_instance.stubs(:data).returns(sample_weather)
-
     assert_equal 1, all('table.weather-table').count
     assert_equal sample_weather.count, all('table.weather-table tr').count
   end
